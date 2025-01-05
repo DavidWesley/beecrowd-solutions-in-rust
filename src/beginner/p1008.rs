@@ -1,19 +1,3 @@
-// aconst input = require('fs').readFileSync('//dev/stdin', 'utf8')
-// const [number, hours, valueByHours] = input.split('\n')
-//     .map((value, index) => {
-//         if (index == 2) return parseFloat(value).toFixed(2)
-//         else return parseInt(value)
-//     })
-//     .filter((value) => !isNaN(value))
-
-// function salary(h = 0, vH = 0) {
-//     let sal = h * vH
-//     return sal.toFixed(2)
-// }
-
-// console.log(`NUMBER = ${number}`)
-// console.log(`SALARY = U$ ${salary(hours, valueByHours)}`)
-
 use std::io;
 
 pub fn main() {
