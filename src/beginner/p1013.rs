@@ -1,6 +1,10 @@
 use std::fmt::Debug;
 use std::str::FromStr;
 
+fn parse_input<T: FromStr>(input: &str) -> Result<T, T::Err> {
+    input.trim().parse::<T>()
+}
+
 fn read_line_vec<T: FromStr<Err = E>, E: Debug>() -> Vec<T> {
     use std::io;
     let mut input = String::new();
@@ -9,7 +13,7 @@ fn read_line_vec<T: FromStr<Err = E>, E: Debug>() -> Vec<T> {
     let values: Vec<T> = input
         .split_ascii_whitespace()
         .into_iter()
-        .map(|s| s.parse::<T>().expect(""))
+        .map(|s| parse_input::<T>(&s).unwrap())
         .collect();
 
     values
