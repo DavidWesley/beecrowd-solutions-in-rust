@@ -8,3 +8,4 @@ pub mod p1006;
 pub mod p1007;
 pub mod p1008;
 pub mod p1009;
+pub mod p1010;
