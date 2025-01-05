@@ -8,7 +8,7 @@ pub fn main() {
     io::stdin().read_line(&mut input_b).unwrap();
 
     let a: i32 = input_a.trim().parse().unwrap();
-    let b: i32 = input_a.trim().parse().unwrap();
+    let b: i32 = input_b.trim().parse().unwrap();
 
     println!("X = {}", a + b);
 }
