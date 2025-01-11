@@ -39,14 +39,15 @@ impl fmt::Display for Duration {
     }
 }
 
-fn calculate_duration(time: u32) -> Duration {
-    let mut remaining_time = time.clone();
+fn calculate_duration_from_seconds(secs: u32) -> Duration {
+    const FACTORS: [u32; 3] = [1, 60_u32.pow(1), 60_u32.pow(2)];
     let mut values: [u32; 3] = [0, 0, 0];
+    let mut remaining_secs = secs.clone();
 
     for i in (0..3).rev() {
-        let factor: u32 = 60_u32.pow(i as u32);
-        values[i] = remaining_time / factor;
-        remaining_time -= values[i] * factor;
+        let factor = FACTORS[i];
+        values[i] = remaining_secs / factor;
+        remaining_secs -= values[i] * factor;
     }
 
     Duration {
@@ -59,5 +60,5 @@ fn calculate_duration(time: u32) -> Duration {
 pub fn main() {
     let time: u32 = read_line_numeric().unwrap();
 
-    println!("{}", calculate_duration(time))
+    println!("{}", calculate_duration_from_seconds(time))
 }
