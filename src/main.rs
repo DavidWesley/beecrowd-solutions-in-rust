@@ -1,5 +1,5 @@
 mod beginner;
 
 fn main() {
-    beginner::p1019::main();
+    beginner::p1020::main();
 }
